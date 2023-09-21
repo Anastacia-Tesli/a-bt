@@ -1,0 +1,85 @@
+@import '../../index.scss';
+
+.container {
+  width: 250px;
+  font-size: 16px;
+  position: relative;
+}
+
+.label {
+  position: absolute;
+  background-color: $main-bg-color;
+  color: $input-color;
+  font-size: 14px;
+  padding: 0 5px;
+  top: -10px;
+  left: 10px;
+  z-index: 2;
+  visibility: hidden;
+  transition: visibility 0.1s ease-in-out;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.input {
+  width: 100%;
+  height: 48px;
+  font-size: 16px;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  outline: none;
+  border: 1px solid $input-color;
+  border-radius: 4px;
+  transition: border-color 0.2s ease-in;
+  position: relative;
+
+  &::placeholder {
+    font-size: 16px;
+    transition: color 0.2s ease-in-out;
+  }
+
+  &:focus {
+    border-color: $accent-color;
+    border-width: 2px;
+
+    &::placeholder {
+      color: transparent;
+    }
+  }
+}
+
+.hints {
+  position: absolute;
+  top: 48px;
+  background-color: $main-bg-color;
+  width: 100%;
+  max-height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  border: 1px solid $input-color;
+  border-radius: 4px;
+  overflow-y: scroll;
+  z-index: 3;
+}
+
+.hint {
+  width: 100%;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: rgba(128, 128, 128, 0.234);
+  }
+}
+
+.empty {
+  padding: 5px 10px;
+  box-sizing: border-box;
+  text-align: left;
+}
